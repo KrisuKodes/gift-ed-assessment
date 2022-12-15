@@ -14,6 +14,7 @@ import { useForm } from '@mantine/form';
 import { showNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import styles from '../styles/Login.module.scss';
@@ -47,6 +48,7 @@ function getStrength(password: string) {
 }
 
 export default function Login() {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const form = useForm({
         initialValues: {
@@ -79,7 +81,7 @@ export default function Login() {
         showNotification({
             title: `Welcome to GIFT.ed, ${values.name}!`,
             message: "You'll be redirected once this notification closes.",
-            onClose: () => alert('boo'),
+            onClose: () => router.push('/home'),
         });
     };
 
