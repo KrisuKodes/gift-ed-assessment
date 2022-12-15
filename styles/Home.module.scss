@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+    background-color: #f2f2f2;
+
+    .chartItem {
+        width: 150px;
+        aspect-ratio: 2/1;
+    }
+
+    .riskLevelBar {
+        width: 30px;
+        height: 100px;
+        background-image: linear-gradient(#339a9a, #8ceeed);
+    }
+}
